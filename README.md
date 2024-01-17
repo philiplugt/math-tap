@@ -1,11 +1,10 @@
-# Math Tap
+# Math Tap!
 
 A small web app similar to FizzBuzz, but with a prominent big red button.
 
 <div align="center">
-    <img width="600" alt="math_tap" src="">
+    <img width="300" alt="math_tap" src="https://github.com/philiplugt/math-tap/assets/22942635/33e3604a-9e2b-414c-b191-20df0e693ea3">
     <p><sup>The Math Tap app in dark mode</sup></p>
-    <br>
 </div>
 
 ### Versioning
