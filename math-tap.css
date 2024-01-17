@@ -1,0 +1,180 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --red: rgba(200, 0, 0, 1);
+  --red-shadow: rgba(144, 0, 0, 1);
+  --dark-color: rgba(48, 55, 64, 1);
+  --light-color: rgba(249, 225, 185, 1);
+  --white: rgba(233, 233, 233, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Noto Sans", Arial;
+  font-size: 22px;
+  color: var(--dark-color);
+  background: var(--light-color);
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  padding: 50px 20px;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.math-tap-counter {
+  text-align: center;
+  line-height: 100px;
+  font-size: 72px;
+  font-weight: bold;
+  width: 180px;
+  height: 100px;
+  border-radius: 12px;
+  color: var(--dark-color);
+  box-shadow: 0px 0px 0px 8px var(--dark-color);
+}
+
+.big-red-button-container {
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  width: 272px;
+  height: 214px;
+}
+
+.big-red-button {
+  position: relative;
+  width: 240px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--red-shadow);
+  box-shadow:  0px 2px 0px 4px rgba(176, 184, 196, 1),
+    0px 16px 0px 16px rgba(199, 208, 221, 1);
+}
+
+.big-red-button::before {
+  content: 'Tap!';
+  font-size: 72px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  transform: rotateX(60deg);
+  border-radius: 50%;
+  background-color: var(--red);
+  background: linear-gradient(0deg, rgba(0,0,0,1) -100%, var(--red) 40%);
+  top: -120px;
+  z-index: 1;
+  box-shadow: inset 0px -16px 0px 10px rgba(206, 0, 0, 1);
+  transition: all 0.2s ease-out 0s;
+}
+
+.big-red-button::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 60px;
+  background-color: var(--red-shadow);
+  transition: all 0.2s ease-out 0s;
+}
+
+.big-red-button:active::before {
+  top: -75px;
+}
+
+.big-red-button:active::after {
+  height: 15px;
+  transform: translate(0px, 40px);
+}
+
+.math-tap-control-button {
+  font-weight: bold;
+  border-radius: 4px;
+  border-width: 4px;
+  width: 120px;
+  padding: 6px;
+  margin: 0px 4px;
+
+}
+
+.math-tap-textbox {
+  width: min(100%, 360px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.math-tap-textbox > h1 {
+  font-size: 72px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.math-tap-textbox > p {
+  text-wrap: wrap;
+  text-align: center;
+}
+
+.math-tap-textbox > p > span {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--red);
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+
+  .math-tap-counter {
+    width: 140px;
+    font-size: 48px;
+  }
+
+  .math-tap-textbox > h1 {
+    font-size: 48px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body { 
+    background: var(--dark-color); 
+  } 
+
+  .math-tap-counter {
+    color: var(--white);
+    box-shadow: 0px 0px 0px 6px var(--white);
+  }
+
+  .math-tap-textbox {
+    color: var(--white);
+  }
+}
